@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prototype</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="speed.css" type="text/css" media="screen">
+        <script src="https://raw.githubusercontent.com/jmaister/excellentexport/master/excellentexport.js" async></script>
+        <script src="speed.js"></script>
+    </head>
+    <body onload='init()'>
+        <h1>Benchmark Your Javascript</h1>
+        <h2>Work in Progress: Styling Still To Come</h2>
+        <p>Can't get the test conditions you need with any other benchmarking platform? Outer Planet benchmarking lets you test your JS on your hardware under your conditions.</p>
+        <form>
+            <div id="libraries">
+                <p>Select required libraries here:</p>
+                <input type="checkbox" name="library" value="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">Angular
+                <input type="checkbox" name="library" value="https://raw.githubusercontent.com/jashkenas/backbone/master/backbone-min.js">Backbone
+                <input type="checkbox" name="library" value="https://d3js.org/d3.v3.min.js">D3
+                <input type="checkbox" name="library" value="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js">Dojo
+                <input type="checkbox" name="library" value="https://raw.githubusercontent.com/eliperelman/fn.js/master/src/index.js">FN
+                <input type="checkbox" name="library" value="https://raw.githubusercontent.com/impress/impress.js/master/js/impress.js">Impress
+                <input type="checkbox" name="library" value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js">JQuery
+                <input type="checkbox" name="library" value="https://raw.githubusercontent.com/dtao/lazy.js/master/lazy.min.js">Lazy
+                <input type="checkbox" name="library" value="https://raw.githubusercontent.com/mozilla/pdf.js/master/src/pdf.js">PDF
+                <input type="checkbox" name="library" value="https://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js">Prototype
+                <input type="checkbox" name="library" value="https://code.jquery.com/qunit/qunit-1.22.0.js">QUnit
+                <input type="checkbox" name="library" value="https://raw.githubusercontent.com/swfobject/swfobject/master/swfobject/swfobject.js">SWFObject
+                <p>Don't see your requisite library listed? Enter the url to import it.</p>
+                <input type="text" name="import" id="import">
+                <button type="button" onclick="getLib(document.getElementById('import').value)">Import</button>
+            </div>
+            <div id="run">
+                <select id="numIn" onchange="numInChange(this)">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+            </select>
+            <p>Execute</p>
+            <button type="button" onclick="run('second')">Runs Per Second</button>
+            <button type="button" onclick="run('speed')">Time To Run</button>
+            </div>
+            <div id="code">
+                <div class="container">
+                    <textarea class="input" rows="15" cols="50" placeholder="Enter code snippet here...">var array = [1,2,3,4,5,6,7,8,9];
+for (var i = 0; i < array.length; i++){var test="do stuff";}</textarea>
+                </div>
+                <div class="container">
+                    <textarea class="input" rows="15" cols="50" placeholder="Enter code snippet here...">var array = [1,2,3,4,5,6,7,8,9];
+for(element in array){var test="do stuff";}</textarea>
+                </div>
+            </div>
+        </form>
+        <div id="elements">
+            <p>Don't change your code. Just add the elements it needs.</p>
+            <form>
+                Type: <select id="elemType">
+
+                </select>
+                ID: <input type="text" name="Element ID" id="elemId">
+                Class: <input type="text" name="Element Class" id="elemClass">
+                <button type="button" onclick="addElement()">Add Test Element</button>
+            </form>
+            <div id="examples"></div>
+        </div>
+        <table id="myTable">
+        </table>
+    </body>
+</html>

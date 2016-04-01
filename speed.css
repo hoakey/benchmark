@@ -1,0 +1,27 @@
+div {
+    margin: 0.7em;
+}
+
+#code {
+    float: right;
+}
+
+#libraries {
+    float: left;
+    width: 22%;
+    border-style: double;
+    border-width: 2px;
+}
+
+#run {
+    float: right;
+    border-style: double;
+    border-width: 2px;
+}
+
+#elements {
+    float: left;
+    width: 40%;
+    border-style: double;
+    border-width: 2px;
+}
